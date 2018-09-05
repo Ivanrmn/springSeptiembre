@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table()
+@Table(name = "T_PERSONES")
 
 @SequenceGenerator(name = "sequencia_persona", sequenceName = "SEQ_PERSONA")
 public class Persona {
