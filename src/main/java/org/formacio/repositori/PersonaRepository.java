@@ -5,9 +5,9 @@ import org.formacio.domain.Persona;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
+@RepositoryRestResource(collectionResourceRel = "persones", path = "persona")
 public interface PersonaRepository extends CrudRepository<Persona, Long> {
 
     @Query(value = "select persona from Persona persona join fetch persona.mascotes where persona.id = 10")
