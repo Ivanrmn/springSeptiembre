@@ -1,20 +1,28 @@
 package org.formacio.domain;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table()
 
+@SequenceGenerator(name = "sequencia_persona", sequenceName = "SEQ_PERSONA")
 public class Persona {
 
 	/*
 	 * Persona ha d'emprar la sequencia SEQ_PERSONA per els ids
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_persona")
+	@Column(name = "PER_ID")
 	private Long id;
-	
+
+	@Column(name = "PER_NOM")
 	private String nom;
-	
+
 	private Set<Casa> propietats = new HashSet<>();
-	
+
 	private Set<Animal> mascotes = new HashSet<>();
 	
 	public Long getId() {
