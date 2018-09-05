@@ -1,11 +1,19 @@
 package org.formacio.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "T_MUNICIPIS")
 public class Municipi {
 
 	/**
 	 * L'id del municipi es el propi nom. No fa falta cap generador
 	 */
+	@Id
+	@Column(name = "MUN_NOM")
 	private String nom;
 
 	public String getNom() {
