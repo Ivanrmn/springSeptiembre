@@ -1,13 +1,12 @@
 package org.formacio.domain;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
-@Table(name = "T_PERSONES")
+@Table(name = "t_persones")
 
-@SequenceGenerator(name = "sequencia_persona", sequenceName = "SEQ_PERSONA")
+@SequenceGenerator(name = "sequencia_persona", sequenceName = "seq_persona")
 public class Persona {
 
 	/*
@@ -15,14 +14,16 @@ public class Persona {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_persona")
-	@Column(name = "PER_ID")
+	@Column(name = "per_id")
 	private Long id;
 
-	@Column(name = "PER_NOM")
+	@Column(name = "per_nom")
 	private String nom;
 
-	private Set<Casa> propietats = new HashSet<>();
+/*	@OneToMany(mappedBy = "adreca", fetch = FetchType.EAGER)
+	private Set<Casa> propietats = new HashSet<>();*/
 
+	@OneToMany(mappedBy = "nom", fetch = FetchType.EAGER)
 	private Set<Animal> mascotes = new HashSet<>();
 	
 	public Long getId() {
@@ -37,12 +38,12 @@ public class Persona {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Set<Casa> getPropietats() {
+/*	public Set<Casa> getPropietats() {
 		return propietats;
 	}
 	public void setPropietats(Set<Casa> propietats) {
 		this.propietats = propietats;
-	}
+	}*/
 	public Set<Animal> getMascotes() {
 		return mascotes;
 	}

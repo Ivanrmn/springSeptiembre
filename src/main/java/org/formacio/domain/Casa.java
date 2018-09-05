@@ -1,24 +1,28 @@
+/*
 package org.formacio.domain;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_CASES")
+@Table(name = "t_cases")
+
 public class Casa {
 
-	/**
+	*/
+/**
 	 * Casa ha d'emprar l'estrategia per l'id IDENTITY
-	 */
+	 *//*
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "CAS_ID")
+	@Column(name = "cas_id")
 	private Long id;
 
-	@Column(name = "CAS_ADRECA")
+	@Column(name = "cas_adreca")
 	private String adreca;
 
-	@Column(name = "CAS_MUNICIPI")
+	@Column(name = "cas_municipi")
 	private Municipi municipi;
 
 	public Long getId() {
@@ -72,3 +76,4 @@ public class Casa {
 	
 	
 }
+*/

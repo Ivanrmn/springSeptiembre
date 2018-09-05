@@ -6,14 +6,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "T_ANIMALS")
+@Table(name = "t_animals")
 public class Animal {
 	
 	/**
 	 * L'id d'animal es el propi nom. No fa falta cap generador
 	 */
 	@Id
-	@Column(name = "ANI_NOM")
+	@Column(name = "ani_nom")
 	private String nom;
 
 	public String getNom() {
